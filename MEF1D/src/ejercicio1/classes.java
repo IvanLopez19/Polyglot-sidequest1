@@ -1,3 +1,6 @@
+package ejercicio1;
+
+public:
 enum lines{NOLINE,SINGLELINE,DOUBLELINE};
 enum modes {NOMODE,INT_FLOAT,INT_INT_INT};
 enum parameters {ELEMENT_LENGTH,THERMAL_CONDUCTIVITY,HEAT_SOURCE};
@@ -84,7 +87,7 @@ class condition extends item{
 
 };
 
-class mesh{
+public class mesh{
     float parameters[3]; //Para este caso, los valores de l, k y Q
     int sizes[4]; //La cantidad de nodos, elementos, condiciones de dirichlet y neumann
     node node_list[]; //Arreglo de nodos

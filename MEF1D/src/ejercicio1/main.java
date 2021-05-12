@@ -1,28 +1,33 @@
 //Archivo que contiene el procedimiento principal de la implementación,
 //describiendo los pasos a seguir para la aplicación del FEM al problema
 //de transferencia de calor.
+package ejercicio1;
 
-import "classes.java";
-import "tools.java";
+import java.util.ArrayList;
+import java.lang.System.*;
 
+//import ejercicio1.mesh;
+
+
+public class main{
 int main()
 {
     //Se preparan dos vectores, uno para contener todas las Ks locales de los elementos de la malla
     //y uno para contener todas las bs locales de dichos elementos
-    vector<Matrix> localKs;
-    vector<Vector> localbs;
+    ArrayList<ArrayList<Integer>> localKs = new ArrayList<>();
+    ArrayList<ArrayList<ArrayList<Integer>>> localbs = new ArrayList<>();
 
     //Se preparan también las variables para la K y la b globales, y una para las incógnitas de
     //temperatura, que es donde se almacenará la respuesta.
-    Matrix K;
-    Vector b;
-    Vector T;
+    ArrayList<ArrayList<ArrayList<Integer>>> K = new ArrayList<>();
+    ArrayList<ArrayList<Integer>> b = new ArrayList<>();
+    ArrayList<ArrayList<Integer>> T = new ArrayList<>();
 
     //Se coloca primero una introducción con todas las características de la implementación
-    cout << "IMPLEMENTACIÓN DEL MÉTODO DE LOS ELEMENTOS FINITOS\n"
-         << "\t- TRANSFERENCIA DE CALOR\n" << "\t- 1 DIMENSIÓN\n"
-         << "\t- FUNCIONES DE FORMA LINEALES\n" << "\t- PESOS DE GALERKIN\n"
-         << "*********************************************************************************\n\n";
+    System.out.print ("IMPLEMENTACIÓN DEL MÉTODO DE LOS ELEMENTOS FINITOS\n"+
+        "\t- TRANSFERENCIA DE CALOR\n" + "\t- 1 DIMENSIÓN\n"+
+        "\t- FUNCIONES DE FORMA LINEALES\n" + "\t- PESOS DE GALERKIN\n"+
+        "*********************************************************************************\n\n");
 
     //Se crea un objeto mesh, que contendrá toda la información de la malla
     mesh m;
@@ -60,8 +65,9 @@ int main()
     calculate(K,b,T);
 
     //Se informa la respuesta:
-    cout << "La respuesta es: \n";
+    System.out.print("La respuesta es: \n");
     showVector(T);
 
     return 0;
+}
 }

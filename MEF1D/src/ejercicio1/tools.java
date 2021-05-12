@@ -1,5 +1,6 @@
 import Java.io.FileReader;
 
+package ejercicio1;
 //Esta función recibe:
 //- Un flujo de archivo de texto para extraer la información
 //- La cantidad de líneas a omitir (puede ser 1 o 2)
@@ -46,7 +47,7 @@ void leerMallayCondiciones(mesh &m){
     //Se prepara un arreglo para el nombre del archivo
     String filename;
     //Se prepara un flujo para el archivo
-    FileReader file = new FileReader("C:problem.msh");
+    FileReader file = new FileReader("problem.msh");
     //Se preparan variables para extraer los parámetros del problema y las cantidades de
     //datos en la malla (nodos, elementos, condiciones de Dirichlet, condiciones de Neumann)
     float l,k,Q;
